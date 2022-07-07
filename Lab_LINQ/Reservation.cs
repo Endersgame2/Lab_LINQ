@@ -4,7 +4,8 @@ namespace Lab_LINQ
      class Reservation
     {
         public int ID { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Created { get; set; }
+        public DateTime StartDate { get; set; }
         public int Occupants { get; set; }
         public bool IsCurrent { get; set; }
         public Client Client { get; set; }
@@ -15,9 +16,9 @@ namespace Lab_LINQ
         public Reservation() { }
         public Reservation(int occupants, Client client, Room room)
         {
-            Date = DateTime.Now;
+            Created = DateTime.Now;
             Occupants = occupants;
-            IsCurrent = true;
+            IsCurrent = false;
             Client = client;
             Room = room;
         }
