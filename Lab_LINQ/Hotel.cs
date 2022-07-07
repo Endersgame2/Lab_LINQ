@@ -48,6 +48,11 @@ namespace Lab_LINQ
         public Reservation AutomaticReservation(int clientID, int occupants)
         {
             var room = Rooms.Where(room => room.Capacity >= occupants).FirstOrDefault();
+            return ReserveRoom(room, clientID, occupants);
+        }
+
+        public Reservation ReserveRoom(Room room, int clientID, int occupants) { 
+        
             if (room == null)
                 return null;
             var client = GetClient(clientID);
